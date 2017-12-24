@@ -1,0 +1,26 @@
+package thirty.days.of.code.seven;
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for(int i=0; i < n; i++){
+            arr[i] = in.nextInt();
+        }
+        in.close();
+
+
+        StringBuilder builder = new StringBuilder();
+        for(int i=0; i < n; i++){
+            builder.append(arr[n -1 -i]);
+            builder.append(" ");
+        }
+
+        System.out.println(builder.toString());
+    }
+}
