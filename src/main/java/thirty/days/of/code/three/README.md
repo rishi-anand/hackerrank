@@ -5,4 +5,4 @@ Intro to Conditional Statements
 https://www.hackerrank.com/challenges/30-conditional-statements/problem
 
 
-![Alt text](../../../../../../resources/question-3.png?raw=true "Title")
+![Alt text](../../../../../../resources/thirty.days.of.code/question-3.png?raw=true "Title")
