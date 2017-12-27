@@ -2,18 +2,7 @@
 
 https://www.hackerrank.com/domains/algorithms/warmup
 
-1. Warmup
-    
-   -Diagnol Difference
-   https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/warmup/diagnoal/difference
-   
-    -Plus Minus
-https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/warmup/plus/minus
-
-    -Staircase
-https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/warmup/staircase
-
-
+![Alt text](../../resources/algorithm/algorithm.png?raw=true "Title")
 
 # Warmup
 
