@@ -12,29 +12,39 @@ public class Solution {
 
         Scanner sc = new Scanner(System.in);
         int l = sc.nextInt();
-        int[] arr = new int[l];
-        for (int i = 0; i < l; i++){
-            arr[i] = sc.nextInt();
+        for (int k = 0; k < l; k++){
+            int n = sc.nextInt();
+            System.out.println(isPrimeShort(n) ? "Prime" : "Not prime");
+
         }
 
-        for (int n : arr){
-            if(n % 2 == 0){
-                System.out.println("Not prime");
-                continue;
-            } else {
-                boolean isPrime = true;
-                for(int i = 3; i < ((n + 1) / 2) ; i++){
-                    if(n % i == 0){
-                        isPrime = false;
-                        System.out.println("Not prime");
-                        break;
-                    }
-                }
+    }
 
-                if(isPrime){
-                    System.out.println("Prime");
+    private static boolean isPrimeLong(int n) {
+        if(n % 2 == 0){
+            return true;
+
+        } else {
+
+            for(int i = 3; i < ((n + 1) / 2) ; i++){
+                if(n % i == 0){
+                    return false;
                 }
             }
+            return true;
         }
+    }
+
+    private static boolean isPrimeShort(int n) {
+        if (n < 2) {
+            return false;
+        }
+        int sqrt = (int) Math.sqrt(n);
+        for (int i = 2; i <= sqrt; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
