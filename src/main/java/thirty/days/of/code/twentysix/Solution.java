@@ -1,7 +1,5 @@
 package thirty.days.of.code.twentysix;
 
-import org.omg.PortableInterceptor.INACTIVE;
-
 import java.io.*;
 import java.util.*;
 
@@ -41,7 +39,7 @@ public class Solution {
             }
 
             //returned in year ahead of expected of year
-        } else if(Integer.valueOf(returnArr[2]) - Integer.valueOf(returnArr[2]) > 0){
+        } else if(Integer.valueOf(returnArr[2]) - Integer.valueOf(expectedArr[2]) > 0){
             System.out.println(10000);
         } else {
             //returned in year is less than expected year
