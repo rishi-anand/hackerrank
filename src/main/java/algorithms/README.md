@@ -2,10 +2,9 @@
 
 ![Alt text](../../resources/algorithm/algorithm.png?raw=true "Title")
 
-# Warmup
+# [Warmup](https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/warmup)
 
-
-https://www.hackerrank.com/domains/algorithms/warmup
+https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/warmup
 
 | Day |                                                Challenge                                                | Points |                                                                                   Solution                                                                                  |
 |:---:|:-------------------------------------------------------------------------------------------------------:|:------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
