@@ -1,9 +1,9 @@
 [topic]
 
-Solve Me First
+Simple Array Sum
 
 [link]
-https://www.hackerrank.com/challenges/solve-me-first/problem
+https://www.hackerrank.com/challenges/simple-array-sum/problem
 
 
 ![Alt text](q.png?raw=true "Title")
