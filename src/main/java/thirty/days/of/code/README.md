@@ -35,6 +35,8 @@ https://www.hackerrank.com/domains/tutorials/30-days-of-code
 |  25 | Running Time and Complexity                                                                             |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/blob/master/src/main/java/thirty/days/of/code/twentyfive)                          |                   
 |  26 | Nested Logic                                                                                            |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/blob/master/src/main/java/thirty/days/of/code/twentysix)                           |
 |  27 | Testing                                                                                                 |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/blob/master/src/main/java/thirty/days/of/code/twentyseven)                         |
+|  28 | RegEx, Patterns, and Intro to Databases                                                                 |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/blob/master/src/main/java/thirty/days/of/code/twentyeight)                         |
+|  29 | Bitwise AND                                                                                             |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/blob/master/src/main/java/thirty/days/of/code/twentynine)                         |
 
 
 
