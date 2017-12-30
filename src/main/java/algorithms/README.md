@@ -23,6 +23,7 @@ https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/w
 
 # [implementation](https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/implementation)
 
+| Day |                                                Challenge                                                | Points |                                                                                   Solution                                                                                  |
 |:---:|:-------------------------------------------------------------------------------------------------------:|:------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |  0  | Grading Students                                                                                        |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/implementation/grading/student)               |
 |  1  | Apple and Orange                                                                                        |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/implementation/apple/and/orange)              |
