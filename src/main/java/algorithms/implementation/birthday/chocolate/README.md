@@ -1,9 +1,9 @@
 [topic]
 
-Breaking the Records
+Birthday Chocolate
 
 [link]
-https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+https://www.hackerrank.com/challenges/the-birthday-bar/problem
 
 
 ![Alt text](q-1.png?raw=true "Title")
