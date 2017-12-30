@@ -10,6 +10,14 @@ public class Solution {
 
     static int[] solve(int[] grades){
         // Complete this function
+        for (int i = 0; i < grades.length; i++){
+            int roundingInt = grades[i] % 5;
+            if(roundingInt > 2 && grades[i] > 37){
+                grades[i] = grades[i] + (5 - roundingInt);
+            }
+        }
+
+        return grades;
     }
 
     public static void main(String[] args) {
