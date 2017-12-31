@@ -1,7 +1,5 @@
 package algorithms.graph.theory.roads.and.libraries;
 
-import practice.graph.GraphExample;
-
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -48,7 +46,7 @@ public class Solution {
         }
     }
 
-    static int roadsAndLibraries(int n, int c_lib, int c_road, int[][] cities) {
+    static long roadsAndLibraries(int n, int c_lib, int c_road, int[][] cities) {
         // Complete this function
         Graph graph = convertToGraph(n, cities);
         //System.out.println("Convert to graph done");
@@ -57,8 +55,8 @@ public class Solution {
 
         //System.out.println("populate done");
 
-        int totalCity = 0, isolatedCityCost = 0;
-        int costLib = 0, costRoad = 0;
+        long totalCity = 0, isolatedCityCost = 0;
+        long costLib = 0, costRoad = 0;
         for(Set<Integer> outerSet : sets){
             totalCity = totalCity + outerSet.size();
             costLib = costLib + outerSet.size() * c_lib;
@@ -75,6 +73,13 @@ public class Solution {
         }
 
         return (costLib > costRoad) ? costRoad + isolatedCityCost : costLib + isolatedCityCost;
+    }
+
+    static void populateSet(int[][] cities, Set<Set<Integer>> sets){
+        for (int i = 0; i < cities.length; i++){
+            int[] citi = cities[i];
+        }
+
     }
 
     public static void populateSet(Graph graph, Set<Set<Integer>> sets){
@@ -135,7 +140,7 @@ public class Solution {
                     cities[cities_i][cities_j] = in.nextInt();
                 }
             }
-            int result = roadsAndLibraries(n, c_lib, c_road, cities);
+            long result = roadsAndLibraries(n, c_lib, c_road, cities);
             System.out.println(result);
         }
         in.close();
