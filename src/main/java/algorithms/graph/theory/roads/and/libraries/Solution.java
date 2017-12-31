@@ -12,7 +12,7 @@ public class Solution {
 
     static class Graph {
         int V;
-        LinkedList<Integer> lists[];
+        List<Integer> lists[];
         Graph(int V){
             this.V = V;
             lists = new LinkedList[V];
@@ -20,13 +20,19 @@ public class Solution {
             for(int i = 0; i < V ; i++){
                 lists[i] = new LinkedList<Integer>();
             }
+
+            //System.out.println("Size of lists : " + lists.length);
         }
     }
 
 
     static void addEdge(Graph graph, int src, int dest){
-        graph.lists[src].addFirst(dest);
-        graph.lists[dest].addFirst(src);
+        try {
+            graph.lists[src].add(dest);
+            graph.lists[dest].add(src);
+        } catch (Exception e){
+            //System.out.println("Exception - src: " + src + ", dest: " + dest);
+        }
     }
 
     static void printGraph(Graph graph){
@@ -44,12 +50,17 @@ public class Solution {
 
     static int roadsAndLibraries(int n, int c_lib, int c_road, int[][] cities) {
         // Complete this function
-        Graph graph = convertToGraph(cities);
+        Graph graph = convertToGraph(n, cities);
+        //System.out.println("Convert to graph done");
         Set<Set<Integer>> sets = new HashSet<Set<Integer>>();
         populateSet(graph, sets);
 
+        //System.out.println("populate done");
+
+        int totalCity = 0, isolatedCityCost = 0;
         int costLib = 0, costRoad = 0;
         for(Set<Integer> outerSet : sets){
+            totalCity = totalCity + outerSet.size();
             costLib = costLib + outerSet.size() * c_lib;
             if(outerSet.size() == 1){
                 costRoad = costRoad + c_lib;
@@ -59,11 +70,16 @@ public class Solution {
 
         }
 
-        return (costLib > costRoad) ? costRoad : costLib;
+        if(totalCity < n){
+            isolatedCityCost = (n - totalCity) * c_lib;
+        }
+
+        return (costLib > costRoad) ? costRoad + isolatedCityCost : costLib + isolatedCityCost;
     }
 
     public static void populateSet(Graph graph, Set<Set<Integer>> sets){
         for(int v = 0; v < graph.V; v++){
+            //System.out.println(" populateSet v : " + v);
             Set<Integer> currentSet = new HashSet<Integer>();
             currentSet.add(v + 1);
             boolean save = true;
@@ -95,8 +111,8 @@ public class Solution {
         }
     }
 
-    public static Graph convertToGraph(int[][] cities){
-        Graph graph = new Graph(cities.length);
+    public static Graph convertToGraph(int n, int[][] cities){
+        Graph graph = new Graph(n);
         for(int i = 0; i < cities.length; i++){
             int[] edges = cities[i];
             addEdge(graph, --edges[0], --edges[1]);
