@@ -1,5 +1,7 @@
 package algorithms.graph.theory.roads.and.libraries;
 
+import practice.graph.GraphExample;
+
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -8,12 +10,99 @@ import java.util.regex.*;
 
 public class Solution {
 
+    static class Graph {
+        int V;
+        LinkedList<Integer> lists[];
+        Graph(int V){
+            this.V = V;
+            lists = new LinkedList[V];
+
+            for(int i = 0; i < V ; i++){
+                lists[i] = new LinkedList<Integer>();
+            }
+        }
+    }
+
+
+    static void addEdge(Graph graph, int src, int dest){
+        graph.lists[src].addFirst(dest);
+        graph.lists[dest].addFirst(src);
+    }
+
+    static void printGraph(Graph graph){
+        for(int v = 0; v < graph.V; v++){
+            System.out.println("Adjacency list of vertex "+ (v + 1));
+            System.out.print(v + 1);
+
+            for(Integer data : graph.lists[v]){
+                System.out.print(" -> " + ++data);
+            }
+
+            System.out.println("\n");
+        }
+    }
+
     static int roadsAndLibraries(int n, int c_lib, int c_road, int[][] cities) {
         // Complete this function
-        int count = 0;
+        Graph graph = convertToGraph(cities);
+        Set<Set<Integer>> sets = new HashSet<Set<Integer>>();
+        populateSet(graph, sets);
 
+        int costLib = 0, costRoad = 0;
+        for(Set<Integer> outerSet : sets){
+            costLib = costLib + outerSet.size() * c_lib;
+            if(outerSet.size() == 1){
+                costRoad = costRoad + c_lib;
+            } else {
+                costRoad = costRoad + (((outerSet.size() - 1) * c_road) + c_lib);
+            }
 
-        return count;
+        }
+
+        return (costLib > costRoad) ? costRoad : costLib;
+    }
+
+    public static void populateSet(Graph graph, Set<Set<Integer>> sets){
+        for(int v = 0; v < graph.V; v++){
+            Set<Integer> currentSet = new HashSet<Integer>();
+            currentSet.add(v + 1);
+            boolean save = true;
+
+            for(Integer data : graph.lists[v]){
+                currentSet.add(++data);
+            }
+
+            if(sets.isEmpty()){
+                sets.add(currentSet);
+            } else {
+                Iterator<Set<Integer>> it = sets.iterator();
+                while (it.hasNext() && save) {
+                    Set<Integer> set = it.next();
+                    if(currentSet.containsAll(set) && currentSet.size() > set.size()){
+                        it.remove();
+                        save = false;
+                        sets.add(currentSet);
+                    }
+                    if(set.containsAll(currentSet)){
+                        save = false;
+                    }
+                }
+            }
+
+            if(save) {
+                sets.add(currentSet);
+            }
+        }
+    }
+
+    public static Graph convertToGraph(int[][] cities){
+        Graph graph = new Graph(cities.length);
+        for(int i = 0; i < cities.length; i++){
+            int[] edges = cities[i];
+            addEdge(graph, --edges[0], --edges[1]);
+        }
+
+        return graph;
     }
 
     public static void main(String[] args) {
