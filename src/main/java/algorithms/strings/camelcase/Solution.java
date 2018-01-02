@@ -1,4 +1,4 @@
-package algorithms.strings.camel;
+package algorithms.strings.camelcase;
 
 import java.io.*;
 import java.util.*;
