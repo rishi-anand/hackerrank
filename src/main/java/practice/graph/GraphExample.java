@@ -46,21 +46,21 @@ public class GraphExample {
     private static void undirected(){
         int V = 5;
         Graph graph = new Graph(V);
-//        addEdge(graph, 0, 1);
-//        addEdge(graph, 0, 4);
-//        addEdge(graph, 1, 2);
-//        addEdge(graph, 1, 3);
-//        addEdge(graph, 1, 4);
-//        addEdge(graph, 2, 3);
-//        addEdge(graph, 3, 4);
+        addEdge(graph, 0, 1);
+        addEdge(graph, 0, 4);
+        addEdge(graph, 1, 2);
+        addEdge(graph, 1, 3);
+        addEdge(graph, 1, 4);
+        addEdge(graph, 2, 3);
+        addEdge(graph, 3, 4);
 
 
-        addEdge(graph,0, 1);
-        addEdge(graph,0, 2);
-        addEdge(graph,1, 2);
-        addEdge(graph,2, 0);
-        addEdge(graph,2, 3);
-        addEdge(graph,3, 3);
+//        addEdge(graph,0, 1);
+//        addEdge(graph,0, 2);
+//        addEdge(graph,1, 2);
+//        addEdge(graph,2, 0);
+//        addEdge(graph,2, 3);
+//        addEdge(graph,3, 3);
 
 
         System.out.println("Undirected Graph Example");
@@ -72,29 +72,33 @@ public class GraphExample {
     //solution 2
     private static void BFS(Graph graph, int src){
         List<Integer> visitedList = new ArrayList<Integer>();
-        Collections.fill(visitedList, 0);
+        int[] ar = new int[graph.lists.length];
+        Arrays.fill(ar, 0);
         bfsQueue.add(src);
+        ar[src] = 0;
         visitedList.add(src);
-
         System.out.println("Graph BFS");
+        int count = 0;
         while (!bfsQueue.isEmpty()){
             int a = bfsQueue.poll();
             System.out.println(a);
             List<Integer> integers = graph.lists[a];
+            count++;
             for(int i = 0; i < integers.size(); i++){
                 if(!visitedList.contains(integers.get(i))){
+                    ar[integers.get(i)] = count;
                     bfsQueue.add(integers.get(i));
                     visitedList.add(integers.get(i));
                 }
             }
         }
+        System.out.println(Arrays.toString(ar));
     }
 
 
     //solution 2
     private static void DFS(Graph graph, int src){
         List<Integer> visitedList = new ArrayList<Integer>();
-        Collections.fill(visitedList, 0);
         dfsStack.add(src);
         visitedList.add(src);
 
