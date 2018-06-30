@@ -33,6 +33,28 @@ public class AreaCalculator
 
         return area;
     }
+
+    public int calculate2() {
+        int price = 0;
+
+        for (int rectangle = 0; rectangle < rectangles.size(); rectangle++)
+            price += calculate2(rectangles.get(rectangle), rectangle);
+
+        return price;
+    }
+
+    private int calculate2(Rectangle currentRectangle, int currentCount) {
+        int price = 0;
+
+        for(int nextRectangle = 0; nextRectangle < rectangles.size(); nextRectangle++){
+            if(nextRectangle != currentCount) {
+                Rectangle overlap = currentRectangle.findOverlap(rectangles.get(nextRectangle));
+                price += overlap.price();
+            }
+        }
+
+        return price;
+    }
 }
 
 class Rectangle {
@@ -48,6 +70,8 @@ class Rectangle {
     }
 
     public int area() { return width * height; }
+
+    public int price() { return area() * price; }
 
     public Rectangle findOverlap(Rectangle other) {
         int left = Math.max(this.x, other.x),
