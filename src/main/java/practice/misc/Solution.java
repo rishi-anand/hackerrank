@@ -18,44 +18,11 @@ public class Solution {
         AreaCalculator areaCalculator = new AreaCalculator();
 
         for(int i = 0; i < input1; i++){
-            areaCalculator.addRectangle(input2[i][0], input2[i][1], ((input2[i][2] - input2[i][0]) + 1), ((input2[i][3] - input2[i][1]) + 1));
+            areaCalculator.addRectangle(input2[i][0], input2[i][1], ((input2[i][2] - input2[i][0]) + 1), ((input2[i][3] - input2[i][1]) + 1), input2[i][4]);
         }
 
         System.out.println("result" + areaCalculator.calculate());
 
         return 0;
-    }
-
-
-    class Rectangle {
-        private final Point topLeft;
-        private final Point bottomRight;
-
-        public Rectangle(Point topLeft, Point bottomRight) {
-            this.topLeft = topLeft;
-            this.bottomRight = bottomRight;
-        }
-
-        public boolean isOverLapping(Rectangle other) {
-            if (this.topLeft.x > other.bottomRight.x
-                    || this.bottomRight.x < other.topLeft.x
-                    || this.topLeft.y < other.bottomRight.y
-                    || this.bottomRight.y > other.topLeft.y) {
-                return false;
-            }
-
-            return true;
-        }
-    }
-
-    class Point {
-        int x;
-        int y;
-
-        public Point(int x, int y) {
-            super();
-            this.x = x;
-            this.y = y;
-        }
     }
 }
