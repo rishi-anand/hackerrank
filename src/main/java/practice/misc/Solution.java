@@ -50,15 +50,6 @@ class AreaCalculator {
         return price();
     }
 
-    private int price(){
-        int price = 0;
-        for(Integer i : unitPlotsPrice.values()){
-            price+= i;
-        }
-
-        return price;
-    }
-
     private void calculate2(ParkingPlot currentParkingPlot, int currentCount) {
         for(int parkingPlot = 0; parkingPlot < parkingPlots.size(); parkingPlot++){
             if(parkingPlot != currentCount) {
@@ -77,6 +68,15 @@ class AreaCalculator {
                 }
             }
         }
+    }
+
+    private int price(){
+        int price = 0;
+        for(Integer i : unitPlotsPrice.values()){
+            price+= i;
+        }
+
+        return price;
     }
 }
 
