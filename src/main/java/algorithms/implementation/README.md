@@ -17,4 +17,5 @@ https://www.hackerrank.com/domains/algorithms/implementation
 |  7  | Migratory Birds                                                                                         |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/implementation/migratory/birds)               |
 |  8  | Day of the Programmer                                                                                   |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/implementation/day/of/the/programmer)         |
 |  9  | Bon Appetit                                                                                             |   30   | [Solution.java](https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/implementation/bon/appetit)                   |
+|  10  | Sock Merchant                                                                                            |   10   | [Solution.java](https://github.com/rishi-anand/hackerrank/tree/master/src/main/java/algorithms/implementation/sock/merchant)                   |
 
