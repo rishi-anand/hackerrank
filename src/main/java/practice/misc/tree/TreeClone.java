@@ -1,71 +1,64 @@
 package practice.misc.tree;
 
+import model.BinaryTreeNode;
+import util.TreePrinterUtil;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class TreeClone {
 
-    private class BNT {
-        private int data;
-        private BNT left;
-        private BNT right;
+    BinaryTreeNode root;
 
-        public BNT(int d) {
-            data = d;
+    private void insertNode2(BinaryTreeNode root, BinaryTreeNode node){
+        if(root == null){
+            return;
         }
 
-        public BNT clone() {
-            BNT root = new BNT(this.data);
-            Queue<BNT> queue = new LinkedList<>();
-            queue.offer(this);
-            while (!queue.isEmpty()) {
-                BNT b = queue.poll();
-                if (b.left != null) {
-                    root.left = new BNT(b.left.data);
-                    queue.offer(b.left);
-                }
-
-                if (b.right != null) {
-                    root.right = new BNT(b.right.data);
-                    queue.offer(right);
-                }
+        Queue<BinaryTreeNode> q = new LinkedList<>();
+        q.offer(root);
+        while (!q.isEmpty()){
+            BinaryTreeNode temp = q.poll();
+            if(temp.getLeft() != null){
+                q.offer(temp.getLeft());
+            } else {
+                temp.setLeft(node);
+                return;
             }
 
-            return root;
-        }
-
-        public BNT clone2() {
-
-            return performClone(this, new BNT(this.data));
-        }
-
-        public BNT performClone(BNT root, BNT temp) {
-            if (root == null) {
-                return temp;
+            if(temp.getRight() != null){
+                q.offer(temp.getRight());
+            } else {
+                temp.setRight(node);
+                return;
             }
+        }
+    }
 
-            if (root.left != null) {
-                temp.left = new BNT(root.left.data);
-                root = root.left;
-                performClone(root, temp);
-            }
-
-            if (root.right != null) {
-                temp.right = new BNT(root.right.data);
-                root = root.right;
-                performClone(root, temp);
-            }
-
-            return temp;
+    private void verticalOrderTraversal(BinaryTreeNode root){
+        if(root == null){
+            return;
         }
 
-        public BNT clone3() {
-            BNT bnt = new BNT(this.data);
-            bnt.left = this.left.clone();
-            bnt.right = this.right.clone();
-            return bnt;
 
-        }
+    }
+
+
+    public static void main(String[] args){
+        TreeClone clone = new TreeClone();
+        clone.root = TreeInsertUtil.insertNode(6);
+
+
+
+        TreePrinterUtil.print(clone.root);
+
+        BinaryTreeNode newClone = clone.root.clone3();
+        System.out.println("Clone : ");
+        TreePrinterUtil.print(newClone);
+
+        BinaryTreeNode mirror = clone.root.mirror();
+        System.out.println("Mirror : ");
+        TreePrinterUtil.print(mirror);
 
     }
 }
