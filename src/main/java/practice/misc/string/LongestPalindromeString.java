@@ -13,5 +13,7 @@ public class LongestPalindromeString {
                 }
             }
         }
+
+        return 0;
     }
 }
