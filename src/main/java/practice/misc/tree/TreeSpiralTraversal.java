@@ -1,11 +1,8 @@
 package practice.misc.tree;
 
 import model.BinaryTreeNode;
+import util.TreeInsertUtil;
 import util.TreePrinterUtil;
-
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
 
 public class TreeSpiralTraversal {
 

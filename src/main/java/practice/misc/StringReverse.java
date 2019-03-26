@@ -1,38 +1,19 @@
 package practice.misc;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-
 public class StringReverse {
 
     public static void main(String[] args) throws Exception {
-//        Scanner sc = new Scanner(System.in);
-//        int input = sc.nextInt();
-//        BufferedReader in = new BufferedReader ( new FileReader( "" ));
-//
-//        Stream<String> stream = in.lines();
-//
-//
-//        in.lines().flatMapToInt(x -> IntStream.of(Integer.parseInt(x)));
-//
-//        printMatrix(input);
+        int[] arr = {1, 20, 3};
+        int res = getMaximumSum(arr);
+        System.out.println(res);
 
+        char ch = 'P';
+        int asciiCode = ch;
+        // type casting char as int
+        int asciiValue = (int)ch;
 
-        String host = "http://10.0.0.0";
-        Pattern ipPattern= Pattern.compile("(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}");
-        if(ipPattern.matcher(host).matches()){
-            System.out.println("ipBased");
-        } else {
-            System.out.println("dnsBased");
-        }
-
-
-
+        System.out.println("ASCII value of "+ch+" is: " + asciiCode);
+        System.out.println("ASCII value of "+ch+" is: " + asciiValue);
     }
 
     public static int fib(int n){
@@ -47,5 +28,20 @@ public class StringReverse {
 
             System.out.println();
         }
+    }
+
+    private static int getMaximumSum(int[] arr){
+        int inclusive = 0;
+        int exclusive = 0;
+
+        for (int i = 0; i < arr.length; i++){
+            if(i % 2 == 0){
+                exclusive += arr[i];
+            } else {
+                inclusive += arr[i];
+            }
+        }
+
+        return Math.max(inclusive, exclusive);
     }
 }

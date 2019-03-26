@@ -1,4 +1,4 @@
-package practice.misc.tree;
+package util;
 
 import model.BinaryTreeNode;
 

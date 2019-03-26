@@ -2,6 +2,7 @@ package practice.misc.tree;
 
 import model.BinaryTreeNode;
 import model.DoublyLinkedList;
+import util.TreeInsertUtil;
 import util.TreePrinterUtil;
 
 import java.util.LinkedList;
